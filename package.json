@@ -1,0 +1,20 @@
+{
+  "name": "medscope-ai",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch server/src/index.js",
+    "dev:client": "vite --config client/vite.config.js",
+    "build": "npm run build:client",
+    "build:client": "vite build --config client/vite.config.js",
+    "start": "node server/src/index.js",
+    "test": "node --test server/tests/*.test.js",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "vite": "^7.1.7"
+  }
+}
